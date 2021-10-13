@@ -1,15 +1,180 @@
+<!-- HEADER -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="rgba(0,0,0,1)">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="rgba(0,0,0,1)">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="rgba(0,0,0,1)">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="public/javascripts/parallax.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="public/stylesheets/app.css">
     <title>Adarsh Nandanwar</title>
 </head>
-<body>
-    <h1>Hello there!</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis similique earum, quisquam perspiciatis laboriosam commodi? Consectetur libero recusandae, ad dolor, voluptatem consequatur repudiandae dolorem repellat aspernatur, vitae ullam quos iste.</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis similique earum, quisquam perspiciatis laboriosam commodi? Consectetur libero recusandae, ad dolor, voluptatem consequatur repudiandae dolorem repellat aspernatur, vitae ullam quos iste.</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis similique earum, quisquam perspiciatis laboriosam commodi? Consectetur libero recusandae, ad dolor, voluptatem consequatur repudiandae dolorem repellat aspernatur, vitae ullam quos iste.</p>
+<body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="89">
+
+    <nav id="navbar-scrollspy" class="navbar fixed-top navbar-expand-lg navbar-light expand">
+        <a class="navbar-brand" href="#">
+            <span id="nav-name"><i class="fas fa-code d-none d-md-inline"></i>ADARSH NANDANWAR</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="#landing">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#about">About</a>
+                <a class="nav-item nav-link" href="#skills">Skills</a>
+                <a class="nav-item nav-link" href="#projects">Projects</a>
+                <a class="nav-item nav-link" href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+<!-- CONTENT -->
+
+    <div id="particles-js"></div>
+
+    <section id="landing">
+        <div class="container">
+            <div class="row">
+                <div id="home-top">
+                </div>
+                <div class="col-md-6 offset-md-3">
+                    <div id="home">
+                        <div id="profileContent" class="profileBox">
+                            <img id="profilePic" src="public/static/profile.jpg">
+                        </div>
+                        <div id="name">
+                            <h1 style="font-size: 4vh;">Adarsh Nandanwar</h1>
+                            <h2 style="color: grey; font-size: 3vh;">Coder | Designer | Developer</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="parallax-window text-center" data-parallax="scroll" data-z-index="1"
+            data-image-src="public/static/parallax/about.jpg">
+            <h3 class="parallax-info">About</h3>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 text-center info" id="aboutContent">
+                    <p>Hello!<br>I'm Adarsh Nandanwar, a web designer, web developer and coder. My skills are broad ranging
+                        form front end to back end web development. I enjoy building user-friendly web applications. I also
+                        love competitive coding and am proficient in C++. </p>
+                    <p><a class="btn btn-black"
+                            href="https://drive.google.com/uc?authuser=0&id=1Sr2gX6SxzTPHzQzVe9do5uwabiJQdFZL&export=download"
+                            id="resume-link"><i class="fas fa-download"></i> Resume</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <!-- https://unsplash.com/photos/d7CZYeWZyzc -->
+        <div class="parallax-window text-center" data-parallax="scroll" data-z-index="1"
+            data-image-src="public/static/parallax/skills.jpg">
+            <h3 class="parallax-info">Skills</h3>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 text-center info" id="skillsContent">
+                    <div class="row" id="skillRow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <!-- https://www.pexels.com/photo/black-road-bike-leaning-on-red-blue-and-white-wing-graffiti-wall-545008/ -->
+        <div class="parallax-window text-center" data-parallax="scroll" data-z-index="1"
+            data-image-src="public/static/parallax/projects.jpg">
+            <h3 class="parallax-info">Projects</h3>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 text-center info" id="projectsContent">
+                    <div class="row" id="projectRow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="parallax-window text-center" data-parallax="scroll" data-z-index="1"
+            data-image-src="public/static/parallax/contact.jpg">
+            <h3 class="parallax-info">Contact Me</h3>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 text-center info" id="contactContent">
+                    <p>The form is disabled for now, please use linkedin to contact.</p>
+                    <form action="/contact" method="post">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="fname">First Name</label>
+                                <input type="text" class="form-control" name="message[firstname]" id="fname"
+                                    placeholder="First Name" required disabled>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="lname">Last Name</label>
+                                <input type="text" class="form-control" name="message[lastname]" id="lname"
+                                    placeholder="Last Name" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="message[email]" id="email" placeholder="Email"
+                                required disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobilenumber">Mobile Number</label>
+                            <input type="tel" class="form-control" name="message[mobilenumber]" id="mobilenumber"
+                                placeholder="Mobile Number" required disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" rows="5" name="message[content]" id="message"
+                                required disabled></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-black" disabled>Send<i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<!-- FOOTER -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center" id="footer">
+                <h3>
+                    <a id="gh-link" href="https://github.com/AdarshNandanwar"><i class="fab fa-github"></i></a>
+                    <a id="li-link" href="https://www.linkedin.com/in/adarshnandanwar/"><i class="fab fa-linkedin"></i></a>
+                    <!-- <a id="fb-link" href=""><i class="fab fa-facebook-square"></i></a> -->
+                </h3>
+                <h6 >Adarsh Nandanwar © 2021</h6>
+            </div>
+        </div>
+    </div>
+        
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="public/javascripts/index.js"></script>
 </body>
 </html>
