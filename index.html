@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,18 +15,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="rgba(0,0,0,1)">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="public/javascripts/parallax.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
     <link rel="stylesheet" href="public/stylesheets/app.css">
     <title>Adarsh Nandanwar</title>
 </head>
+
 <body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="89">
 
     <nav id="navbar-scrollspy" class="navbar fixed-top navbar-expand-lg navbar-light expand">
         <a class="navbar-brand" href="#">
             <span id="nav-name"><i class="fas fa-code d-none d-md-inline"></i>ADARSH NANDANWAR</span>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -34,12 +38,13 @@
                 <a class="nav-item nav-link" href="#about">About</a>
                 <a class="nav-item nav-link" href="#skills">Skills</a>
                 <a class="nav-item nav-link" href="#projects">Projects</a>
+                <a class="nav-item nav-link" href="#research">Research</a>
                 <a class="nav-item nav-link" href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-<!-- CONTENT -->
+    <!-- CONTENT -->
 
     <div id="particles-js"></div>
 
@@ -55,7 +60,7 @@
                         </div>
                         <div id="name">
                             <h1 style="font-size: 4vh;">Adarsh Nandanwar</h1>
-                            <h2 style="color: grey; font-size: 3vh;">Coder | Designer | Developer</h2>
+                            <h2 style="color: grey; font-size: 3vh;">Software Engineer</h2>
                         </div>
                     </div>
                 </div>
@@ -69,13 +74,39 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2 text-center info" id="aboutContent">
-                    <p>Hello!<br>I'm Adarsh Nandanwar, a web designer, web developer and coder. My skills are broad ranging
-                        form front end to back end web development. I enjoy building user-friendly web applications. I also
-                        love competitive coding and am proficient in C++. </p>
-                    <p><a class="btn btn-black"
+                <div class="col-md-8 offset-md-2 text-justify info" id="aboutContent">
+                    <p>
+                    <div class="text-center">
+                        Hello!
+                        <br>
+                        I'm Adarsh Nandanwar.
+                    </div>
+                    <br>
+                    <br>
+                    I am a Software Engineer at Microsoft working in the Cloud + AI group. I contribute towards
+                    building the Azure Storage platform which is Microsoft's cloud storage solution offering highly
+                    available, massively scalable, durable, and secure storage for a variety of data objects in the
+                    cloud.
+                    <br>
+                    <br>
+                    I graduated from BITS Pilani with a B.E. in Computer Science (Batch of 2018-22). I love software
+                    development and have worked on full-stack web development, machine learning, and reinforcement
+                    learning projects which can be found on my GitHub.
+                    <br>
+                    <br>
+                    In the past, I have interned at JPMorgan Chase & Co. as Quantitative Research Intern in the Cash
+                    Equities team, at Microsoft IDC as SWE Intern in the Azure Networking team and at Samsung R&D
+                    Institute India in the Applications R&D team.
+                    <br>
+                    <br>
+                    I also love competitive coding and am proficient in C++.
+                    </p>
+                    <br>
+                    <div class="text-center">
+                        <a class="btn btn-black"
                             href="https://drive.google.com/uc?authuser=0&id=1Sr2gX6SxzTPHzQzVe9do5uwabiJQdFZL&export=download"
-                            id="resume-link"><i class="fas fa-download"></i> Resume</a></p>
+                            id="resume-link"><i class="fas fa-download"></i> Resume</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -88,8 +119,13 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2 text-center info" id="skillsContent">
-                    <div class="row" id="skillRow">
+                <div class="col-md-10 offset-md-1 text-center info" id="skillsContent">
+                    <div class="row d-flex align-items-center justify-content-center" id="skillRow">
+                    </div>
+                    <br>
+                    <br>
+                    <h5>Past Experience</h5>
+                    <div class="row d-flex align-items-center justify-content-center" id="oldSkillRow">
                     </div>
                 </div>
             </div>
@@ -104,7 +140,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2 text-center info" id="projectsContent">
-                    <div class="row" id="projectRow">
+                    <div class="row d-flex align-items-center justify-content-center" id="projectRow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="research">
+        <!-- https://www.pexels.com/photo/black-road-bike-leaning-on-red-blue-and-white-wing-graffiti-wall-545008/ -->
+        <div class="parallax-window text-center" data-parallax="scroll" data-z-index="1"
+            data-image-src="public/static/parallax/research.jpg">
+            <h3 class="parallax-info">Research</h3>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 text-center info" id="researchContent">
+                    <div class="row" id="researchRow">
                     </div>
                 </div>
             </div>
@@ -118,7 +169,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2 text-center info" id="contactContent">
-                    <p>The form is disabled for now, please use linkedin to contact.</p>
+                    <p class="text-secondary">The form is disabled for now, please use LinkedIn to contact.</p>
                     <form action="/contact" method="post">
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -134,8 +185,8 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" name="message[email]" id="email" placeholder="Email"
-                                required disabled>
+                            <input type="email" class="form-control" name="message[email]" id="email"
+                                placeholder="Email" required disabled>
                         </div>
                         <div class="form-group">
                             <label for="mobilenumber">Mobile Number</label>
@@ -144,10 +195,11 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea class="form-control" rows="5" name="message[content]" id="message"
-                                required disabled></textarea>
+                            <textarea class="form-control" rows="5" name="message[content]" id="message" required
+                                disabled></textarea>
                         </div>
-                        <button type="submit" class="btn btn-black" disabled>Send<i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" class="btn btn-black" disabled>Send<i
+                                class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
@@ -156,25 +208,31 @@
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
-<!-- FOOTER -->
+    <!-- FOOTER -->
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 text-center" id="footer">
                 <h3>
                     <a id="gh-link" href="https://github.com/AdarshNandanwar"><i class="fab fa-github"></i></a>
-                    <a id="li-link" href="https://www.linkedin.com/in/adarshnandanwar/"><i class="fab fa-linkedin"></i></a>
+                    <a id="li-link" href="https://www.linkedin.com/in/adarshnandanwar/"><i
+                            class="fab fa-linkedin"></i></a>
                     <!-- <a id="fb-link" href=""><i class="fab fa-facebook-square"></i></a> -->
                 </h3>
-                <h6 >Adarsh Nandanwar © 2021</h6>
+                <h6>Adarsh Nandanwar © 2022</h6>
             </div>
         </div>
     </div>
-        
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="public/javascripts/index.js"></script>
 </body>
+
 </html>

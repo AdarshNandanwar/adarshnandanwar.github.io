@@ -131,12 +131,12 @@ nav.navbar.expand a{
 
 .skill-card{
     padding: 10px;
-    margin: 5px auto;
+    margin: 10px auto;
     background: rgba(0,0,0,0.1);
     border: none;
     border-radius: 0;
     color: rgba(0,0,0,0.9);
-    max-width: 170px;
+    max-width: 200px;
 }
 
 .skill-text{
@@ -144,6 +144,17 @@ nav.navbar.expand a{
 }
 
 .project-card{
+    margin: 10px auto;
+    background: rgba(0,0,0,0.1);
+    border-radius: 0;
+    color: rgba(0,0,0,0.9);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.75vh;
+    line-height: 2vh;
+    cursor: pointer;
+}
+
+.research-card{
     margin-top: 5px;
     background: rgba(0,0,0,0.1);
     border-radius: 0;
