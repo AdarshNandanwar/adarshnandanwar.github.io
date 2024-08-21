@@ -129,9 +129,24 @@ nav.navbar.expand a{
     opacity: 0;
 }
 
+.experience-card{
+    margin-top: 5px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 0;
+    color: rgba(0,0,0,0.9);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.75vh;
+    line-height: 2vh;
+    cursor: pointer;
+}
+
+.experience-image{
+    padding: 2vh;
+}
+
 .skill-card{
-    padding: 10px;
-    margin: 10px auto;
+    padding: 5px;
+    margin: 5px auto;
     background: rgba(0,0,0,0.1);
     border: none;
     border-radius: 0;
@@ -140,6 +155,7 @@ nav.navbar.expand a{
 }
 
 .skill-text{
+    font-size: 1.75vh;
     margin-bottom: 0;
 }
 

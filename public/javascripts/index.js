@@ -21,19 +21,29 @@ $(window).scroll(function () {
         $('nav').addClass('expand');
     }
 
-    if (($(document).scrollTop() + $(window).height()) > $("#landing").outerHeight()) {
+    // About
+    // Experience
+    // Research
+    // Projects
+    // Skills
+    // Contact
+
+    if (($(document).scrollTop() + $(window).height()) > ($("#landing").outerHeight())) {
         $("#aboutContent").fadeTo(1800, 1);
     }
     if (($(document).scrollTop() + $(window).height()) > ($("#landing").outerHeight() + $("#about").outerHeight())) {
-        $("#skillsContent").fadeTo(1800, 1);
+        $("#experienceContent").fadeTo(1800, 1);
     }
-    if (($(document).scrollTop() + $(window).height()) > ($("#landing").outerHeight() + $("#about").outerHeight() + $("#skills").outerHeight())) {
-        $("#projectsContent").fadeTo(1800, 1);
-    }
-    if (($(document).scrollTop() + $(window).height()) > ($("#landing").outerHeight() + $("#about").outerHeight() + $("#skills").outerHeight() + $("#projects").outerHeight())) {
+    if (($(document).scrollTop() + $(window).height()) > ($("#landing").outerHeight() + $("#about").outerHeight() + $("#experience").outerHeight())) {
         $("#researchContent").fadeTo(1800, 1);
     }
-    if (($(document).scrollTop() + $(window).height()) > ($("#landing").outerHeight() + $("#about").outerHeight() + $("#skills").outerHeight() + $("#projects").outerHeight() + $("#research").outerHeight())) {
+    if (($(document).scrollTop() + $(window).height()) > ($("#landing").outerHeight() + $("#about").outerHeight() + $("#experience").outerHeight() + $("#research").outerHeight())) {
+        $("#projectsContent").fadeTo(1800, 1);
+    }
+    if (($(document).scrollTop() + $(window).height()) > ($("#landing").outerHeight() + $("#about").outerHeight() + $("#experience").outerHeight() + $("#research").outerHeight() + $("#projects").outerHeight())) {
+        $("#skillsContent").fadeTo(1800, 1);
+    }
+    if (($(document).scrollTop() + $(window).height()) > ($("#landing").outerHeight() + $("#about").outerHeight() + $("#experience").outerHeight() + $("#research").outerHeight() + $("#projects").outerHeight() + $("#skills").outerHeight())) {
         $("#contactContent").fadeTo(1800, 1);
     }
 });
@@ -43,140 +53,107 @@ $('.navbar-nav>a').on('click', function () {
 
 $(document).ready(function () {
     $("#home").fadeTo(1800, 1);
+    var modalIndexOffset = 0;
 
-    // SKILLS
-    var skillDetails = [
-        { title: "Software Development", iconClass: "fas fa-laptop-code" },
-        { title: "Distributed Systems", iconClass: "fas fa-laptop-code" },
-        { title: "Cloud Computing", iconClass: "fas fa-laptop-code" },
-        { title: "System Design", iconClass: "fas fa-laptop-code" },
-        { title: "Data Structures", iconClass: "fa fa-project-diagram" },
-        { title: "Algorithms", iconClass: "fa fa-file-code" },
-        { title: "Data Analysis", iconClass: "fas fa-chart-bar" },
-        { title: "Artificial intelligence", iconClass: "fas fa-robot" },
-        { title: "Machine Learning", iconClass: "fas fa-robot" },
-        { title: "Deep Learning", iconClass: "fas fa-robot" },
-        { title: "Reinforcement Learning", iconClass: "fas fa-robot" },
-        { title: "Full Stack Web Development", iconClass: "fab fa-github" },
-
-        { title: "C", iconClass: "" },
-        { title: "C++", iconClass: "" },
-        { title: "C Sharp", iconClass: "" },
-        { title: "Java", iconClass: "fab fa-java" },
-        { title: "Python", iconClass: "fab fa-python" },
-        { title: "Django", iconClass: "" },
-        { title: "Flask", iconClass: "" },
-        { title: "HTML", iconClass: "fab fa-html5" },
-        { title: "CSS", iconClass: "fab fa-css3-alt" },
-        { title: "SQL", iconClass: "fas fa-database" },
-        { title: "Kusto Query Language", iconClass: "fas fa-database" },
-        { title: "KDB+", iconClass: "fas fa-database" },
-        { title: "Git & GitHub", iconClass: "fab fa-github" },
-        { title: "Microsoft Azure", iconClass: "fas fa-cloud" },
-        { title: "AWS", iconClass: "fas fa-cloud" }
-    ]
-    var oldSkillDetails = [
-        { title: "JavaScript", iconClass: "fab fa-js" },
-        { title: "jQuery", iconClass: "" },
-        { title: "Node.js", iconClass: "fab fa-node-js" },
-        { title: "MongoDB", iconClass: "fas fa-database" },
-        { title: "Heroku", iconClass: "fas fa-cloud" }
-    ]
-    // adding skills in body
-    var skillRow = document.createDocumentFragment();
-    skillDetails.forEach(function (skill, index) {
-        var newSkill = document.createElement('div');
-        newSkill.className = 'col-md-6 col-lg-3';
-        newSkill.innerHTML =
-            `<div class="card card-body skill-card">\
-            <h5 class="card-title text-center skill-text">\
-                ${skill.iconClass.length ? "<i class='" + skill.iconClass + "'></i> " : ""}\
-                ${skill.title}\
-            </h5>\
-        </div>`;
-        skillRow.appendChild(newSkill);
-    });
-    document.getElementById('skillRow').appendChild(skillRow);
-    // adding old skills in body
-    var oldSkillRow = document.createDocumentFragment();
-    oldSkillDetails.forEach(function (skill, index) {
-        var newSkill = document.createElement('div');
-        newSkill.className = 'col-md-6 col-lg-3';
-        newSkill.innerHTML =
-            `<div class="card card-body skill-card">\
-            <h5 class="card-title text-center skill-text">\
-                ${skill.iconClass.length ? "<i class='" + skill.iconClass + "'></i> " : ""}\
-                ${skill.title}\
-            </h5>\
-        </div>`;
-        oldSkillRow.appendChild(newSkill);
-    });
-    document.getElementById('oldSkillRow').appendChild(oldSkillRow);
-
-    // PROJECTS
-    var projectDetails = [
+    // EXPERIENCE
+    var experienceDetails = [
         {
-            title: "Course Load Portal",
-            description: "Web portal built to streamline the process of registration of courses by the respective HoDs for the semester and generation of course load in various formats for its use in the ERP.",
-            image: "public/static/projects/courseLoad.png",
-            link: ""
+            company: "Microsoft",
+            position: "Software Engineer",
+            location: "Bengaluru, India",
+            startTime: "July 2022",
+            endTime: "August 2024",
+            description: `
+            <ul>\
+            <li>As a part of the Core Platform team, worked on REST APIs for the Azure Blob Storage and Azure Data Lake Storage (ADLS) Gen2 services.</li>\
+            <li>Worked on C++ and C# (C-Sharp) to deliver critical customer-requested features involving data encryption and storage tiers.</li>\
+            <li>As an on-call subject matter expert for Azure Storage Service and Triage, delivered direct business impact by investigating, root-causing and mitigating customer-reported outages and triaging bugs to appropriate owners.</li>\
+            <li>Owned the design and implementation of a new distributed telemetry component in Azure Storage architecture that scaled over 7000+ clusters in 100+ data centers worldwide. This involved writing low-latency code to collect and aggregate data in the hot path of millions of requests every second and push metrics to Kusto storage clusters. Authored design docs and participated in design reviews with stakeholders and PMs.</li>\
+            <li>Aiming to improve platform quality and reliability, introduced infrastructure for deterministic end-to-end validation of consumer representative workloads involving Azure Storage and other Azure control plane components in pre-production and production hardware.</li>\
+            <li>Took the initiative to develop bots to automatically enhance new work items with relevant details in the Storage organization of 200+ developers by analyzing past regressions, code changes and build pipeline results. This reduced the triaging time for regressions from around 2 days to under 1 minute.</li>\
+            <li>Won titles in Microsoft Global Hackathon 2022 and 2023 by developing and pitching innovative solutions in Israel and India venues respectively.</li>\
+            </ul>\
+            `,
+            image: "public/static/experiences/experience2.svg.webp"
         },
         {
-            title: "Transfers Management System",
-            description: "Web application built to efficiently manage the transfers from PS to thesis and from thesis to PS. Used by BITS Pilani Pilani,Goa and Hyderabad campuses.",
-            image: "public/static/projects/TMS.png",
-            link: ""
+            company: "JPMorgan Chase & Co.",
+            position: "Quantitative Research Intern",
+            location: "Bengaluru, India",
+            startTime: "January 2022",
+            endTime: "June 2022",
+            description: `
+            <ul>\
+            <li>Worked in the Cash Equities Quantitative Research team comprising highly experienced quants and stakeholders in NA and EMEA regions.</li>\
+            <li>Built multiple tools to assist traders in unwinding principal trades more efficiently and navigating enormous amounts of historical data by providing business logic based data aggregations, accurate loss estimates, and automated statistical insights.</li>\
+            <li>Identified issues in the data processing pipelines leading to millions of dollars of unnoticed discrepancies across different trading systems.</li>\
+            </ul>\
+            `,
+            image: "public/static/experiences/experience3.png"
         },
         {
-            title: "Practice School Clarification",
-            description: "Web application built to automate the procedure to apply for change in Practice School Station and other PS related clarifications. Used by BITS Pilani Pilani,Goa and Hyderabad campuses.",
-            image: "public/static/projects/CMS.png",
-            link: ""
+            company: "Microsoft",
+            position: "Software Engineer Intern",
+            location: "Hyderabad, India",
+            startTime: "May 2021",
+            endTime: "July 2021",
+            description: `
+            <ul>\
+            <li>Benchmarked various methods of calculating the periodicity of time series data and integrated the best performing one in Azure Traffic Analytics surge insights backend. The new implementation outperformed the previous implementation in 22 out of 23 testing scenarios.</li>\
+            <li>Onboarded Azure Network Watchers Traffic Analytics UI drill-downs to Azure Monitor Workbooks. The changes enable codeless maintenance using Kusto query language, reduced development time, reduced page load time by ~30%, and a more customisable customer experience.</li>\
+            </ul>\
+            `,
+            image: "public/static/experiences/experience2.svg.webp"
         },
         {
-            title: "Parser Translator for Modified 2048 Game Programming Language",
-            description: "A game programming language for a modified version of the famous 2048 game that allows other operations like subtraction, multiplication, and division in addition to the plain doubling operation during tile mergers. Specifically, created a scanner using Flex, a parser translator for a complete syntax‑directed translation scheme using Bison, a suitable grammar to represent the operations, as well as advanced error handling into the scheme (from semantic all the way down to lexical errors).",
-            image: "public/static/projects/2048.png",
-            link: "https://github.com/AdarshNandanwar/Modified-2048-Game-Programming-Language"
-        },
-        {
-            title: "Hybrid Wumpus Agent maze pathfinding using AI",
-            description: "Given a Wumpus world containing exactly one pit and one Wumpus agent in room [1,1]. The goal of the agent is to exit the Wumpus world alive. The agent can exit the Wumpus world by reaching room [4,4]. There will be a breeze in the rooms adjacent to the pit, and there will be a stench in the rooms adjacent to Wumpus. Wrote a python program that uses Propositional Logic sentences to check which rooms are safe. The inference is drawn using the Davis-Putnam-Logemann-Loveland (DPLL) algorithm. There will always be a safe path that the agent can take to exit the Wumpus world. The logical agent can take four actions: Up, Down, Left and Right. These actions help the agent move from one room to an adjacent room. The agent can perceive two things: Breeze and Stench.",
-            image: "public/static/projects/wumpus.png",
-            link: "https://github.com/AdarshNandanwar/hybrid-wumpus-agent-AI"
-        },
-        {
-            title: "Grammer Checker for English Language using NLP",
-            description: "Built a grammar checker from scratch using the concepts of Natural Language Processing. Given a corpus with some paragraphs labeled as correct and some as unknown, the aim was to find all the sentences that have errors. Correct paragraphs have no grammatical errors, while unknown may/may not have sentences which have grammatical errors in them. For example: “In the country there lived a fox. The quick brown fox jump over the fence. Farmer Shaun was terrified.” In this paragraph, the sentence “The quick brown fox jump over the fence” is grammatically incorrect.",
-            image: "public/static/projects/grammar.jpg",
-            link: "https://github.com/AdarshNandanwar/NLP-Grammar-Check-for-English-Language"
-        },
-        {
-            title: "Image Classifier (OpenCV, Flask)",
-            description: "Web aplication made using Flask and OpenCV. User may upload any image which is classified into predefined classes. These are then displayed in the main page with the appropriate tags.",
-            image: "public/static/projects/imageClassifier.png",
-            link: "https://flaskapp-imageclassifier.herokuapp.com/"
-        },
-        {
-            title: "YelpCamp",
-            description: "A simple express app created with the help of mongoDB, passport, etc.",
-            image: "public/static/projects/yelpCamp.png",
-            link: "https://projectappyelpcamp.herokuapp.com/"
+            company: "Samsung R&D Institute India - Nodia",
+            position: "Summer Intern",
+            location: "Noida, India",
+            startTime: "May 2020",
+            endTime: "June 2020",
+            description: `
+            <ul>\
+            <li>Worked in the Applications R&D team on proof of concept for the project “Coughing Sound Analysis via Mobile Device” under Samsung Health.</li>\
+            <li>Used digital signal processing, machine learning, web development, and android application development to create a complete service from scratch.</li>\
+            <li>Worked on python and java languages and used scikit-learn, Flask, LibROSA, and Android Studio. Achieved above 89% accuracy in all ML models.</li>\
+            </ul>\
+            `,
+            image: "public/static/experiences/experience1.svg.png"
         }
     ];
-    // adding projects in body
-    var modalIndexOffset = 0;
-    var projectRow = document.createDocumentFragment();
-    projectDetails.forEach(function (project, index) {
-        var newProject = document.createElement('div');
-        newProject.className = 'col-md-6 col-lg-3';
-        newProject.innerHTML =
+    // Adding professional experience in body
+    var experienceRow = document.createDocumentFragment();
+    var maxDescriptionWords = 100
+    experienceDetails.forEach(function (experience, index) {
+        index += modalIndexOffset;
+        var descriptionWordCount = experience.description.split(' ').length;
+        var newExperience = document.createElement('div');
+        newExperience.className = 'col-md-12 col-lg-12';
+        newExperience.innerHTML =
             `<a data-toggle="modal" data-target="#myModal${index}">\
-            <div class="card project-card">\
-                <img class="card-img-top project-image" src="${project.image}" alt="Card image">\
+            <div class="card experience-card">\
                 <div class="card-body">\
-                    <h5 class="card-title" style="margin: 0;">${project.title}</h5>\
-                    <!-- <p class="card-text">${project.description}</p> -->\
+                    <div class="row">\
+                        <div class="col-md-3">\
+                            <img class="card-img-top experience-image" src="${experience.image}" alt="Card image">\
+                        </div>\
+                        <div class="col-md-9">\
+                            <h5 class="card-title">\
+                                ${experience.company}\
+                                <span style="float:right;">\
+                                    ${experience.location}\
+                                </span>\
+                            </h5>\
+                            <h6 class="card-subtitle mb-2 text-muted">\
+                                ${experience.position}\
+                                <span style="float:right;">\
+                                    ${experience.startTime} - ${experience.endTime}\
+                                </span>\
+                            </h6>\
+                            <p class="card-text">${experience.description.split(' ').slice(0, maxDescriptionWords).join(' ')}\
+                            ${descriptionWordCount > maxDescriptionWords ? " ..." : ""}</p>\
+                        </div>\
+                    </div>\
                 </div>\
             </div>\
         </a>\
@@ -190,27 +167,34 @@ $(document).ready(function () {
                     </div>\
                     <div class="modal-body p-4" id="result">\
                         <div class="row">\
-                            <div class="col-md-12">\
-                                <h5 class="card-title">${project.title}</h5>\
+                            <div class="col-md-12" style="float:left;">\
+                                <h5 class="card-title">\
+                                    ${experience.company}\
+                                    <span style="float:right;">\
+                                        ${experience.location}\
+                                    </span>\
+                                </h5>\
+                                <h5 class="card-text" style="padding: 0vh 3vh 3vh 3vh;">\
+                                    ${experience.position}\
+                                    <span style="float:right;">\
+                                        ${experience.startTime} - ${experience.endTime}\
+                                    </span>\
+                                </h5>\
                             </div>\
                         </div>\
                         <div class="row modal-description">\
-                            <div class="col-md-6">\
-                                <img class="card-img-top project-image" src="${project.image}" alt="Card image">\
-                            </div>\
-                            <div class="col-md-6" style="padding-top: 20px;">\
-                                <p class="card-text">${project.description}</p>\
-                                ${project.link.length ? "<a href=" + project.link + ">View project</a>" : ""}\
+                            <div class="col-md-12" style="padding-top: 20px;">\
+                                <p class="card-text">${experience.description}</p>\
                             </div>\
                         </div>\
                     </div>\
                 </div>\
             </div>\
         </div>`;
-        projectRow.appendChild(newProject);
+        experienceRow.appendChild(newExperience);
     });
-    document.getElementById('projectRow').appendChild(projectRow);
-    modalIndexOffset += projectDetails.length;
+    document.getElementById('experienceRow').appendChild(experienceRow);
+    modalIndexOffset += experienceDetails.length;
 
     // RESEARCH
     var researchDetails = [
@@ -233,7 +217,7 @@ $(document).ready(function () {
             link: "https://arxiv.org/abs/2110.12503"
         }
     ];
-    // adding research in body
+    // Adding research in body
     var researchRow = document.createDocumentFragment();
     var maxDescriptionWords = 60
     researchDetails.forEach(function (project, index) {
@@ -281,4 +265,199 @@ $(document).ready(function () {
     });
     document.getElementById('researchRow').appendChild(researchRow);
     modalIndexOffset += researchDetails.length;
+
+    // PROJECTS
+    var projectDetails = [
+        {
+            title: "Course Load Portal",
+            description: "Web portal built to streamline the process of registration of courses by the respective HoDs for the semester and generation of course load in various formats for its use in the ERP.",
+            image: "public/static/projects/courseLoad.png",
+            link: ""
+        },
+        {
+            title: "Transfers Management System",
+            description: "Web application built to efficiently manage the transfers from PS to thesis and from thesis to PS. Used by BITS Pilani Pilani,Goa and Hyderabad campuses.",
+            image: "public/static/projects/TMS.png",
+            link: ""
+        },
+        {
+            title: "Practice School Clarification",
+            description: "Web application built to automate the procedure to apply for change in Practice School Station and other PS related clarifications. Used by BITS Pilani Pilani,Goa and Hyderabad campuses.",
+            image: "public/static/projects/CMS.png",
+            link: ""
+        },
+        {
+            title: "Parser Translator for Modified 2048 Game Programming Language",
+            description: "A game programming language for a modified version of the famous 2048 game that allows other operations like subtraction, multiplication, and division in addition to the plain doubling operation during tile mergers. Specifically, created a scanner using Flex, a parser translator for a complete syntax-directed translation scheme using Bison, a suitable grammar to represent the operations, as well as advanced error handling into the scheme (from semantic all the way down to lexical errors).",
+            image: "public/static/projects/2048.png",
+            link: "https://github.com/AdarshNandanwar/Modified-2048-Game-Programming-Language"
+        },
+        {
+            title: "Hybrid Wumpus Agent maze pathfinding using AI",
+            description: "Given a Wumpus world containing exactly one pit and one Wumpus agent in room [1,1]. The goal of the agent is to exit the Wumpus world alive. The agent can exit the Wumpus world by reaching room [4,4]. There will be a breeze in the rooms adjacent to the pit, and there will be a stench in the rooms adjacent to Wumpus. Wrote a python program that uses Propositional Logic sentences to check which rooms are safe. The inference is drawn using the Davis-Putnam-Logemann-Loveland (DPLL) algorithm. There will always be a safe path that the agent can take to exit the Wumpus world. The logical agent can take four actions: Up, Down, Left and Right. These actions help the agent move from one room to an adjacent room. The agent can perceive two things: Breeze and Stench.",
+            image: "public/static/projects/wumpus.png",
+            link: "https://github.com/AdarshNandanwar/hybrid-wumpus-agent-AI"
+        },
+        {
+            title: "Grammer Checker for English Language using NLP",
+            description: "Built a grammar checker from scratch using the concepts of Natural Language Processing. Given a corpus with some paragraphs labeled as correct and some as unknown, the aim was to find all the sentences that have errors. Correct paragraphs have no grammatical errors, while unknown may/may not have sentences which have grammatical errors in them. For example: “In the country there lived a fox. The quick brown fox jump over the fence. Farmer Shaun was terrified.” In this paragraph, the sentence “The quick brown fox jump over the fence” is grammatically incorrect.",
+            image: "public/static/projects/grammar.jpg",
+            link: "https://github.com/AdarshNandanwar/NLP-Grammar-Check-for-English-Language"
+        },
+        {
+            title: "Image Classifier (OpenCV, Flask)",
+            description: "Web aplication made using Flask and OpenCV. User may upload any image which is classified into predefined classes. These are then displayed in the main page with the appropriate tags.",
+            image: "public/static/projects/imageClassifier.png",
+            link: "https://flaskapp-imageclassifier.herokuapp.com/"
+        },
+        {
+            title: "YelpCamp",
+            description: "A simple express app created with the help of mongoDB, passport, etc.",
+            image: "public/static/projects/yelpCamp.png",
+            link: "https://projectappyelpcamp.herokuapp.com/"
+        }
+    ];
+    // Adding projects in body
+    var projectRow = document.createDocumentFragment();
+    projectDetails.forEach(function (project, index) {
+        index += modalIndexOffset;
+        var newProject = document.createElement('div');
+        newProject.className = 'col-md-6 col-lg-3';
+        newProject.innerHTML =
+            `<a data-toggle="modal" data-target="#myModal${index}">\
+            <div class="card project-card">\
+                <img class="card-img-top project-image" src="${project.image}" alt="Card image">\
+                <div class="card-body">\
+                    <h5 class="card-title" style="margin: 0;">${project.title}</h5>\
+                    <!-- <p class="card-text">${project.description}</p> -->\
+                </div>\
+            </div>\
+        </a>\
+        <div class="modal fade" id="myModal${index}" tabindex="-1" role="dialog" aria-hidden="true">\
+            <div class="modal-dialog modal-dialog-centered modal-full" role="document">\
+                <div class="modal-content">\
+                    <div class="modal-header">\
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">\
+                            <span aria-hidden="true">×</span>\
+                        </button>\
+                    </div>\
+                    <div class="modal-body p-4" id="result">\
+                        <div class="row">\
+                            <div class="col-md-12">\
+                                <h5 class="card-title">${project.title}</h5>\
+                            </div>\
+                        </div>\
+                        <div class="row modal-description">\
+                            <div class="col-md-6">\
+                                <img class="card-img-top project-image" src="${project.image}" alt="Card image">\
+                            </div>\
+                            <div class="col-md-6" style="padding-top: 20px;">\
+                                <p class="card-text">${project.description}</p>\
+                                ${project.link.length ? "<a href=" + project.link + ">View project</a>" : ""}\
+                            </div>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>`;
+        projectRow.appendChild(newProject);
+    });
+    document.getElementById('projectRow').appendChild(projectRow);
+    modalIndexOffset += projectDetails.length;
+
+    // SKILLS
+    var skillDetailsAreas = [
+        { title: "Software Development", iconClass: "fas fa-laptop-code" },
+        { title: "System Design", iconClass: "fas fa-laptop-code" },
+        { title: "Large Scale Distributed Systems", iconClass: "fas fa-server" },
+        { title: "Storage Systems", iconClass: "fas fa-server" },
+        { title: "Cloud Computing", iconClass: "fas fa-server" },
+        { title: "Data Structures", iconClass: "fa fa-project-diagram" },
+        { title: "Algorithms", iconClass: "fa fa-file-code" },
+        { title: "Full Stack Web Development", iconClass: "fas fa-server" },
+        { title: "REST APIs", iconClass: "fas fa-server" },
+        { title: "Object Oriented Programming", iconClass: "fas fa-laptop-code" },
+        { title: "Data Science", iconClass: "fas fa-chart-bar" },
+        { title: "Data Analysis", iconClass: "fas fa-chart-bar" },
+        { title: "Artificial intelligence", iconClass: "fas fa-robot" },
+        { title: "Machine Learning", iconClass: "fas fa-robot" },
+        { title: "Deep Learning", iconClass: "fas fa-robot" },
+        { title: "Neural Networks", iconClass: "fas fa-robot" },
+        { title: "Reinforcement Learning", iconClass: "fas fa-robot" },
+        { title: "Natural Language Processing", iconClass: "fas fa-robot" },
+        { title: "Large Language Models", iconClass: "fas fa-robot" },
+        { title: "Computer Vision", iconClass: "fas fa-robot" },
+        { title: "Malware Analysis", iconClass: "fas fa-user-shield" },
+        { title: "Academic Research", iconClass: "fas fa-flask" },
+    ]
+    var skillDetailsTools = [
+        { title: "C", iconClass: "" },
+        { title: "C++", iconClass: "" },
+        { title: "C Sharp (C#)", iconClass: "" },
+        { title: "Python", iconClass: "fab fa-python" },
+        { title: "Django", iconClass: "" },
+        { title: "Flask", iconClass: "" },
+        { title: "HTML", iconClass: "fab fa-html5" },
+        { title: "CSS", iconClass: "fab fa-css3-alt" },
+        { title: "SQL", iconClass: "fas fa-database" },
+        { title: "Kusto Query Language", iconClass: "fas fa-database" },
+        { title: "KDB+", iconClass: "fas fa-database" },
+        { title: "Git & GitHub", iconClass: "fab fa-github" },
+        { title: "Azure", iconClass: "fas fa-cloud" },
+        { title: "Azure Storage", iconClass: "fas fa-cloud" },
+        { title: "AWS", iconClass: "fas fa-cloud" },
+        { title: "Heroku", iconClass: "fas fa-cloud" }
+    ]
+    var oldSkillDetails = [
+        { title: "Java", iconClass: "fab fa-java" },
+        { title: "JavaScript", iconClass: "fab fa-js" },
+        { title: "jQuery", iconClass: "" },
+        { title: "Node.js", iconClass: "fab fa-node-js" },
+        { title: "MongoDB", iconClass: "fas fa-database" },
+    ]
+    // Adding skills (areas) in body
+    var skillRowAreas = document.createDocumentFragment();
+    skillDetailsAreas.forEach(function (skill, index) {
+        var newSkill = document.createElement('div');
+        newSkill.className = 'col-md-6 col-lg-3';
+        newSkill.innerHTML =
+            `<div class="card card-body skill-card">\
+            <h5 class="card-title text-center skill-text">\
+                ${skill.iconClass.length ? "<i class='" + skill.iconClass + "'></i> " : ""}\
+                ${skill.title}\
+            </h5>\
+        </div>`;
+        skillRowAreas.appendChild(newSkill);
+    });
+    document.getElementById('skillRowAreas').appendChild(skillRowAreas);
+    // adding skills (tools) in body
+    var skillRowTools = document.createDocumentFragment();
+    skillDetailsTools.forEach(function (skill, index) {
+        var newSkill = document.createElement('div');
+        newSkill.className = 'col-md-6 col-lg-3';
+        newSkill.innerHTML =
+            `<div class="card card-body skill-card">\
+            <h5 class="card-title text-center skill-text">\
+                ${skill.iconClass.length ? "<i class='" + skill.iconClass + "'></i> " : ""}\
+                ${skill.title}\
+            </h5>\
+        </div>`;
+        skillRowTools.appendChild(newSkill);
+    });
+    document.getElementById('skillRowTools').appendChild(skillRowTools);
+    // Adding old skills in body
+    var oldSkillRow = document.createDocumentFragment();
+    oldSkillDetails.forEach(function (skill, index) {
+        var newSkill = document.createElement('div');
+        newSkill.className = 'col-md-6 col-lg-3';
+        newSkill.innerHTML =
+            `<div class="card card-body skill-card">\
+            <h5 class="card-title text-center skill-text">\
+                ${skill.iconClass.length ? "<i class='" + skill.iconClass + "'></i> " : ""}\
+                ${skill.title}\
+            </h5>\
+        </div>`;
+        oldSkillRow.appendChild(newSkill);
+    });
+    document.getElementById('oldSkillRow').appendChild(oldSkillRow);
 });
