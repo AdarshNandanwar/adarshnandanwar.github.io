@@ -278,7 +278,7 @@ $(document).ready(function () {
             title: "Improve Mathematical Reasoning Capabilities of LLMs using Code Generation",
             description: "Parameter efficient fine-tuned latest open-source language models like LLaMA 3.2 3B and Qwen 2.5 7B using QLoRA to leverage Python code generation and Python interpreter as a tool for mathematical reasoning. Implemented parallel training across 4 Nvidia L4 Tensor Core GPUs using Hugging Face Accelerate, enabling larger batch sizes and reduced training time by 3-4 times. Evaluated generations using 6 quantitative metrics like accuracy, perplexity, and syntactic/semantic similarity. Improved average accuracy of LLaMA 3.2 3B from 42% to 68% on intermediate-level math word problems.",
             image: "public/static/projects/llama1.webp",
-            link: ""
+            link: "https://huggingface.co/adarshnandanwarcmu/Llama-3.2-3B-Instruct-MathQA"
         },
         {
             title: "Scalable High-Performance Twitter Recommendation Microservice",
