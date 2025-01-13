@@ -79,7 +79,7 @@ $(document).ready(function () {
         {
             company: "JPMorgan Chase & Co.",
             position: "Quantitative Research Intern",
-            location: "Bengaluru, India",
+            location: "Mumbai, India",
             startTime: "January 2022",
             endTime: "June 2022",
             description: `
@@ -269,6 +269,24 @@ $(document).ready(function () {
     // PROJECTS
     var projectDetails = [
         {
+            title: "GPT-Tiny: Transformer Language Model (LLM) from Scratch",
+            description: "Implemented a decoder-only transformer model with 16 million parameters using PyTorch, Byte-Pair Encoding tokenization, custom cosine annealing schedule, learned positional embeddings, and multi-head self-attention. Pre-trained on C4 corpus under a compute budget of 1e+17 FLOPs using AWS EC2 g5.2xlarge instance. Fine-tuned hyperparameters, achieving validation perplexity of 43.78 with adjustable inference temperature.",
+            image: "public/static/projects/tinygpt1.webp",
+            link: ""
+        },
+        {
+            title: "Improve Mathematical Reasoning Capabilities of LLMs using Code Generation",
+            description: "Parameter efficient fine-tuned latest open-source language models like LLaMA 3.2 3B and Qwen 2.5 7B using QLoRA to leverage Python code generation and Python interpreter as a tool for mathematical reasoning. Implemented parallel training across 4 Nvidia L4 Tensor Core GPUs using Hugging Face Accelerate, enabling larger batch sizes and reduced training time by 3-4 times. Evaluated generations using 6 quantitative metrics like accuracy, perplexity, and syntactic/semantic similarity. Improved average accuracy of LLaMA 3.2 3B from 42% to 68% on intermediate-level math word problems.",
+            image: "public/static/projects/llama1.webp",
+            link: ""
+        },
+        {
+            title: "Scalable High-Performance Twitter Recommendation Microservice",
+            description: "Developed a recommendation microservice using Java Vert.x, computing scores based on user interactions, keywords, and hashtags from ~1 TB of Twitter data processed through Apache Spark ETL jobs written in Scala using Azure Databricks. Established seamless production pipeline using Terraform, Docker, AWS ECR, Helm Charts, and GitHub Actions. Optimized performance using SQL schema denormalization and indexing, asynchronous gRPC communication between microservices, and fine-tuning Kubernetes pod configuration, to get an average latency of under 13 ms. Achieved 42,000+ RPS using AWS EKS Kubernetes cluster with a node group of 4 m8g.xlarge EC2 instances.",
+            image: "public/static/projects/twitter1.png",
+            link: ""
+        },
+        {
             title: "Course Load Portal",
             description: "Web portal built to streamline the process of registration of courses by the respective HoDs for the semester and generation of course load in various formats for its use in the ERP.",
             image: "public/static/projects/courseLoad.png",
@@ -328,7 +346,7 @@ $(document).ready(function () {
             <div class="card project-card">\
                 <img class="card-img-top project-image" src="${project.image}" alt="Card image">\
                 <div class="card-body">\
-                    <h5 class="card-title" style="margin: 0;">${project.title}</h5>\
+                    <h6 class="card-title" style="margin: 0;">${project.title}</h6>\
                     <!-- <p class="card-text">${project.description}</p> -->\
                 </div>\
             </div>\
